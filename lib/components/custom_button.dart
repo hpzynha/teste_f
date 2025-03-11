@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:test_f/design_system/colors.dart';
 
 class CustomButton extends StatefulWidget {
@@ -31,10 +32,10 @@ class _CustomButtonState extends State<CustomButton> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryColor,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         iconColor: Colors.white,
         iconSize: 30,
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         minimumSize: const Size(60, 50),
       ),
       onPressed: isLoading ? null : handlePress,
@@ -50,7 +51,17 @@ class _CustomButtonState extends State<CustomButton> {
                   ),
                 ),
               )
-              : const Icon(Icons.shopping_bag_outlined),
+              :
+              // SvgPicture.asset(
+              //   'assets/images/hide.svg',
+              //   width: 24,
+              //   height: 24,
+              //   colorFilter: const ColorFilter.mode(
+              //     AppColors.surfaceColor,
+              //     BlendMode.srcIn,
+              //   ),
+              // ),
+              const Icon(Icons.shopping_bag_outlined),
     );
   }
 }
